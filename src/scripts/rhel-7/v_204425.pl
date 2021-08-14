@@ -1,19 +1,4 @@
 #!/bin/perl -w
-# Check Text ( C-4549r88467_chk )
-# To determine how the SSH daemon's "PermitEmptyPasswords" option is set, run the following command:
-# 
-# # grep -i PermitEmptyPasswords /etc/ssh/sshd_config
-# PermitEmptyPasswords no
-# 
-# If no line, a commented line, or a line indicating the value "no" is returned, the required value is set.
-# 
-# If the required value is not set, this is a finding.
-# Fix Text (F-4549r88468_fix)
-# To explicitly disallow remote logon from accounts with empty passwords, add or correct the following line in "/etc/ssh/sshd_config":
-# 
-# PermitEmptyPasswords no
-# 
-# The SSH service must be restarted for changes to take effect. Any accounts with empty passwords should be disabled immediately, and PAM configuration should prevent users from being able to assign themselves empty passwords.
 
 # STIGPatcher Class
 package STIGPatcher;
